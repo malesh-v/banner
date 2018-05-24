@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Malesh_Banner::banner_content" title="Banners to categories" module="Malesh_Banner" sortOrder="50" parent="Magento_Backend::content" resource="Malesh_Banner::banner_content" />
+        <add id="Malesh_Banner::banner" title="Banner Manager" module="Malesh_Banner" sortOrder="0" parent="Malesh_Banner::banner_content" action="malesh/banner" resource="Malesh_Banner::banner"/>
+    </menu>
+</config>

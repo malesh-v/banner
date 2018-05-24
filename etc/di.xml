@@ -1,0 +1,27 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="BannerGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Malesh\Banner\Model\Resource\Banner\Collection</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Malesh\Banner\Model\ResourceModel\Banner\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">malesh_banner</argument>
+            <argument name="resourceModel" xsi:type="string">Malesh\Banner\Model\ResourceModel\Banner</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="malesh_banner_listing_data_source" xsi:type="string">Malesh\Banner\Model\ResourceModel\Banner\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+
+    <virtualType name="BannerImageUploader" type="Malesh\Banner\Model\Banner\ImageUploader"/>
+    <type name="Malesh\Banner\Controller\Adminhtml\Banner\Image\Upload">
+        <arguments>
+            <argument name="imageUploader" xsi:type="object">BannerImageUploader</argument>
+        </arguments>
+    </type>
+</config>
